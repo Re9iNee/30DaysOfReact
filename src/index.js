@@ -1,17 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+import React from "react";
+import ReactDOM from "react-dom";
+class Car extends React.Component {
+    constructor(props) {
+        // 1
+        super(props);
+        this.state = {favouriteColor: "blue"};
+    }
+    render(){
+        // 3
+        return <h1>Hello World, {this.state.favouriteColor}</h1>
+    }
+    static getDerivedStateFromProps(props, state) {
+        // 2
+        return {favouriteColor: "AME"}
+    }
+    componentDidMount(){
+        // 4
+        console.log("This won't run? ")
+        setTimeout(() => {
+            this.setState({favouriteColor: "yellow"})
+        }, 1000)
+    }
+}
+ReactDOM.render(<Car favCol="coral"/>, document.getElementById("root"))

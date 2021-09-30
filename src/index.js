@@ -1,18 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import MovieList from "./components/Movielist";
-import Nav from "./components/Navbar";
-import AddMovie from "./components/addMovie";
-import { MovieProvider } from "./contexts/movieContext";
-
-export default function App() {
-    return (
-        <MovieProvider>
-            <AddMovie />
-            <Nav />
-            <MovieList />
-        </MovieProvider>
-    );
-}
+import App from "./App";
 
 ReactDOM.render(<App />, document.getElementById("root"));

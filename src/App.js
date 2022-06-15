@@ -1,7 +1,8 @@
 import React from "react";
+import Component from "./SomeBody";
 
 const App = () => {
-    return <div></div>;
+    return <Component />;
 };
 
 export default App;

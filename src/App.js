@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
+// import { fetch } from "whatwg-fetch";
 
 const App = () => {
+    useEffect(() => {
+        fetch("indexameee.html");
+    }, []);
     return <div></div>;
 };
 
